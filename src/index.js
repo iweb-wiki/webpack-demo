@@ -1,16 +1,15 @@
-// import _ from "lodash";
-import './index.css'
-import img from './img.png';
+import _ from "lodash";
+import print from "./print";
 
 function component () {
     let ele = document.createElement('div');
-    ele.innerHTML = ['Hello', 'webpack', '1.0.3', '!'].join(' ')
-    // ele.innerHTML = _.join(['Hello', 'webpack', '!'], ' ')
-    ele.classList.add('text')
+    const btn = document.createElement('button');
+    ele.innerHTML = _.join(['Hello', 'webpack', '!'], ' ')
 
-    const myImg = new Image();
-    myImg.src = img;
-    ele.appendChild(myImg)
+    btn.innerHTML = '我是一个button';
+    btn.onclick = print;
+
+    ele.appendChild(btn);
 
     return ele;
 }

@@ -78,3 +78,6 @@ npm install -D file-loader
       }
   ]
 ```
+
+
+## 1.0.5 管理输出
