@@ -5,7 +5,7 @@ const path = require("path");
  */
 module.exports = {
   mode: 'none',
-  entry: './src/index.js',
+  entry: './src/main.js',
   // entry: {
   //   app: './src/index.js',
   //   print: './src/print.js'
@@ -17,6 +17,10 @@ module.exports = {
   },
   module:{
     rules:[
+      {
+        test: /\.md$/,
+        use: './markdown-loader'
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
