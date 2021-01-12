@@ -19,7 +19,7 @@ module.exports = {
     rules:[
       {
         test: /\.md$/,
-        use: './markdown-loader'
+        use: ['html-loader', './markdown-loader']
       },
       {
         test: /\.css$/,
