@@ -1,11 +1,13 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 
 /**
  * @type { import ('webpack').Configuration }
  */
 module.exports = {
   mode: 'none',
-  entry: './src/main.js',
+  entry: './src/index.js',
   // entry: {
   //   app: './src/index.js',
   //   print: './src/print.js'
@@ -26,5 +28,14 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      title: 'demo',
+      meta: {
+        viewport: 'width=device-width'
+      }
+    })
+  ]
 };
