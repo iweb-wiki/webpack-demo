@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const remove = require('./remove-comments-plugin')
 
 /**
  * @type { import ('webpack').Configuration }
@@ -36,6 +37,7 @@ module.exports = {
       meta: {
         viewport: 'width=device-width'
       }
-    })
+    }),
+    new remove()
   ]
 };
